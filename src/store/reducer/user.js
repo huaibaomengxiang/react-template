@@ -1,7 +1,7 @@
 
-let defaultState = {
-  count: 0
-}
+const defaultState = {
+  count: 0,
+};
 
 // function Reducer(defaultState) {
 //   this.state = defaultState;
@@ -21,15 +21,12 @@ let defaultState = {
 // reducer.use('ADD_COUNT', (state, value) => ({...state, value}))
 
 
-
-
-
 function reducer(state = defaultState, action) {
   switch (action.type) {
     case 'ADD_COUNT':
-      return Object.assign({}, state, {count: state.count + 1});
+      return Object.assign({}, state, { count: state.count + 1 });
     case 'SUB_COUNT':
-      return Object.assign({}, state, {count: state.count - 1});
+      return Object.assign({}, state, { count: state.count - 1 });
     default:
       return state;
   }

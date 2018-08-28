@@ -8,8 +8,9 @@ import './index.less';
 ReactDOM.render(
   <Provider store={store}>
     <App />
-  </Provider>
-  , document.getElementById('root'));
+  </Provider>,
+  document.getElementById('root'),
+);
 
 if (module.hot) {
   module.hot.accept();

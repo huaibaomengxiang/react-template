@@ -46,6 +46,18 @@ module.exports = {
         ]
       },
       {
+        test: /.js[x]?$/,
+        enforce: "pre",
+        use: [{
+          loader: 'eslint-loader',
+          options: {
+            fix: true,
+          }
+        }],
+        include: path.resolve(__dirname, '../src'),
+        exclude: /node_modules/,
+      },
+      {
         test: /\.(js|jsx)$/,
         include: [
           path.resolve(__dirname, '../src')

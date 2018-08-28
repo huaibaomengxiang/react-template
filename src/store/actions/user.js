@@ -1,11 +1,11 @@
-export const add_count = {
+export const addCount = {
   type: 'ADD_COUNT',
   playload: {
-    count: 1
-  }
-}
+    count: 1,
+  },
+};
 
-export const sub_count = {
+export const subCount = {
   type: 'SUB_COUNT',
   count: 2,
-}
+};
