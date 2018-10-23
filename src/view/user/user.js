@@ -2,7 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import actions from '../../store/actions/index';
+import request from '../../api';
 
+console.log(request);
+const { apis } = request;
 class User extends React.Component {
   constructor(props) {
     super(props);
@@ -11,6 +14,17 @@ class User extends React.Component {
       job: 'develop',
       level: 'low',
     };
+  }
+
+  componentDidMount() {
+    console.log(this.props);
+    this.test();
+  }
+
+  async test() {
+    const mobile = 'Xl7_c9q1GF1vhXQWj3cyzQ==';
+    const data = await apis.getUserList({ mobile, 'pageSize': 20, 'pageNo': 1 });
+    console.log(data);
   }
 
   add() {

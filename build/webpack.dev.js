@@ -12,17 +12,21 @@ const config = merge.smart(baseConfig, {
           'css-loader',
           'postcss-loader',
           'less-loader',
-        ]
-      }
-    ]
+        ],
+      },
+    ],
   },
-
   devServer: {
     hot: true,
     port: 8888,
+    proxy: {
+      '/api': {
+        target: 'http://kia-dev-trade.haimaiche.net',
+        pathRewrite: { '^/api': '' },
+      },
+    },
   },
-
-})
+});
 
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
