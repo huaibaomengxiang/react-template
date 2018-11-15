@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import actions from '../../store/actions/index';
 import request from '../../api';
+import './user.less';
 
 console.log(request);
 const { apis } = request;
@@ -51,6 +52,7 @@ class User extends React.Component {
         <div>{count}</div>
         <div className="btn" onClick={this.add.bind(this)}>点我加一</div>
         <div className="btn" onClick={this.sub.bind(this)}>点我减一</div>
+        <div className="pic"></div>    
       </div>
     );
   }

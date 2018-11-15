@@ -24,29 +24,12 @@ const App = () => (
   <Router>
     <Switch>
       {
-          routers.map(v => <Route key={v.name} exact={v.exact} path={v.path} component={v.component} />)
+          routers.map(v => {
+            return <Route key={v.name} exact={v.exact} path={v.path} component={v.component} />
+          })
         }
     </Switch>
   </Router>
 );
-
-// class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//
-//   render() {
-//     return (
-//       <Router>
-//         <Switch>
-//           {
-//             routers.map(v => <Route key={v.name} exact={v.exact} path={v.path} component={v.component} />)
-//           }
-//         </Switch>
-//       </Router>
-//     );
-//   }
-// }
-
 
 export default App;
